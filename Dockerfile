@@ -1,5 +1,5 @@
 ﻿FROM python:3.10-slim
-LABEL maintainer="Rodrigo Pérez <rodrigo.lukojc@gmail.com>"
+LABEL maintainer="Rodrigo Lukojc <rodrigo.lukojc@gmail.com>"
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 WORKDIR /app
