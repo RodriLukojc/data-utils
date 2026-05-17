@@ -1,45 +1,36 @@
-# utils-infra  
-Herramientas de infraestructura, automatización y soporte técnico empaquetadas en una imagen Docker ligera y reproducible.
+# data-utils — Entorno reproducible para análisis y pipelines de datos
 
-[![CI](https://github.com/RodriLukojc/utils-infra/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/RodriLukojc/utils-infra/actions/workflows/ci.yml)
-[![Release](https://github.com/RodriLukojc/utils-infra/actions/workflows/release.yml/badge.svg?branch=main)](https://github.com/RodriLukojc/utils-infra/actions/workflows/release.yml)
-[![Docker Hub](https://img.shields.io/badge/DockerHub-utils--infra-blue?logo=docker)](https://hub.docker.com/r/rodrigolukojc/utils-infra)
+[![CI](https://github.com/RodriLukojc/data-utils/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/RodrigoLukojc/data-utils/actions/workflows/ci.yml)
+[![Release](https://github.com/RodriLukojc/data-utils/actions/workflows/release.yml/badge.svg?branch=main)](https://github.com/RodriLukojc/data-utils/actions/workflows/release.yml)
+[![Docker Hub](https://img.shields.io/badge/DockerHub-utils--infra-blue?logo=docker)](https://hub.docker.com/r/rodrigolukojc/data-utils)
 
 ---
 
-## Descripción
+## 📌 Descripción
 
-"utils-infra" es una imagen Docker diseñada para centralizar herramientas de infraestructura, automatización y soporte técnico en un entorno portátil y reproducible.
+data-utils es una imagen Docker diseñada como **entorno base para análisis de datos, automatización de pipelines y experimentación reproducible**.
 
-Este proyecto forma parte de mi portafolio profesional orientado a:
+Incluye herramientas esenciales para:
 
-- **Data Analytics**
-- **Infraestructura ligera**
-- **Automatización de procesos**
-- **Buenas prácticas de CI/CD**
+- Limpieza y transformación de datos  
+- Automatización de procesos analíticos  
+- Ejecución de scripts Python orientados a ETL  
+- Reproducibilidad de entornos para Data Analytics y Data Engineering  
+- Integración con CI/CD para flujos de datos versionados  
 
-La imagen se publica automáticamente en Docker Hub utilizando **GitHub Actions**, con soporte para:
-
-- latest  
-- Versionado semántico ("v1.0.0", "v1.1.0", etc.)
+Este proyecto forma parte de mi portafolio profesional como **Analista de Datos / Ingeniero de Datos**, demostrando buenas prácticas de ingeniería aplicadas al mundo del análisis.
 
 ---
 
 ## Características principales
 
-- Imagen ligera basada en Linux
-- Herramientas de automatización y soporte incluidas
-- Pipeline CI/CD completo con:
-  - Build automático
-  - Tests (placeholder)
-  - Publicación en Docker Hub
-  - Versionado semántico automático
-- Reproducible y portable
-- Ideal para tareas de:
-  - Infraestructura
-  - DataOps
-  - Scripts de mantenimiento
-  - Procesos ETL simples
+- Imagen ligera basada en Python 3.10  
+- Librerías esenciales para análisis de datos (Pandas, NumPy, etc.)  
+- Scripts utilitarios para pipelines ETL  
+- CI/CD completo con GitHub Actions  
+- Versionado semántico automático (v1.0.0, v1.1.0, etc.)  
+- Publicación automática en Docker Hub  
+- Entorno reproducible para análisis, pruebas y automatización  
 
 ---
 
@@ -47,47 +38,57 @@ La imagen se publica automáticamente en Docker Hub utilizando **GitHub Actions*
 
 ### Obtener la última versión estable
 
-docker pull rodrigolukojc/utils-infra:latest
-
+docker pull rodrigolukojc/data-utils:latest
 Obtener una versión específica
+bash
+docker pull rodrigolukojc/data-utils:v1.0.0
+Ejecutar un script de análisis
+bash
+docker run -it --rm \
+  -v $(pwd)/data:/app/data \
+  rodrigolukojc/data-utils:latest \
+  python src/etl_example.py
 
-docker pull rodrigolukojc/utils-infra:v1.0.0
+Estructura del proyecto
 
-Ejecutar la imagen
+Código
 
-docker run -it --rm rodrigolukojc/utils-infra:latest bash
+data-utils/
+├── Dockerfile
+├── requirements.txt
+├── src/
+│   ├── etl_example.py        # Ejemplo de pipeline ETL
+│   └── utils/                # Funciones auxiliares
+├── examples/
+│   └── notebook.ipynb        # Notebook de análisis (opcional)
+├── .github/
+│   └── workflows/
+│       ├── ci.yml
+│       └── release.yml
+└── README.md
 
 Versionado
-Este proyecto utiliza versionado semántico:
+Este proyecto utiliza versionado semántico para garantizar reproducibilidad en pipelines de datos.
 
-MAJOR: cambios incompatibles
+Crear una nueva versión:
 
-MINOR: nuevas funcionalidades
-
-PATCH: correcciones
-
-Las versiones se generan automáticamente al crear un tag:
-
-git tag v1.0.0
-git push origin v1.0.0
+git tag v1.1.0
+git push origin v1.1.0
+Esto dispara automáticamente la publicación en Docker Hub.
 
 CI/CD
 
-El repositorio incluye dos workflows:
-
-1. CI (Integración Continua)
-
+CI — Integración Continua
 Instala dependencias
 
 Ejecuta tests
 
-Construye la imagen local
+Construye la imagen
 
-Publica latest en Docker Hub
+Publica latest
 
-2. Release (Entrega Continua)
-
-Se ejecuta solo cuando se crea un tag v*.*.*
+CD — Entrega Continua
+Se ejecuta al crear un tag
 
 Publica:
 
@@ -95,31 +96,43 @@ latest
 
 vX.Y.Z
 
-Estructura del proyecto
-Código
-utils-infra/
-├── Dockerfile
-├── requirements.txt
-├── src/
-│   └── ...
-├── .github/
-│   └── workflows/
-│       ├── ci.yml
-│       └── release.yml
-└── README.md
+Ejemplo de pipeline ETL incluido
+El archivo src/etl_example.py muestra un flujo simple:
+
+Lectura de CSV
+
+Limpieza de datos
+
+Transformaciones
+
+Generación de KPIs
+
+Exportación de resultados
+
+Este ejemplo demuestra cómo usar la imagen como entorno analítico reproducible.
+
+Roadmap
+
+[ ] Añadir conectores a APIs y bases SQL
+
+[ ] Incluir notebooks de análisis reales
+
+[ ] Integrar Airflow o Prefect para orquestación
+
+[ ] Añadir validación de datos con Great Expectations
+
+[ ] Publicar dataset de ejemplo para reproducir pipelines
+
+[ ] Crear dashboard Power BI conectado al pipeline
 
 Autor
 Rodrigo Lukojc  
-Data Analytics
+Analista de Datos · Ingeniería de Datos · Automatización de Procesos
 Buenos Aires, Argentina
 
 🔗 LinkedIn: https://www.linkedin.com/in/rodrigolukojc (linkedin.com in Bing)  
 🐳 Docker Hub: https://hub.docker.com/u/rodrigolukojc (hub.docker.com in Bing)  
 📂 GitHub: https://github.com/rodrigolukojc (github.com in Bing)
 
-⭐ Contribuciones
-Este proyecto forma parte de mi portafolio profesional.
-Las sugerencias, issues y mejoras son bienvenidas.
-
-📜 Licencia
+Licencia
 MIT License.
