@@ -2,6 +2,7 @@
 Herramientas de infraestructura, automatización y soporte técnico empaquetadas en una imagen Docker ligera y reproducible.
 
 [![CI](https://github.com/rodrigolukojc/utils-infra/actions/workflows/ci.yml/badge.svg)](https://github.com/rodrigolukojc/utils-infra/actions/workflows/ci.yml)
+[![CI](https://github.com/rodrigolukojc/utils-infra/actions/workflows/ci.yml/badge.svg)](https://github.com/rodrigolukojc/utils-infra/actions/workflows/ci.yml)
 [![Release](https://github.com/rodrigolukojc/utils-infra/actions/workflows/release.yml/badge.svg)](https://github.com/rodrigolukojc/utils-infra/actions/workflows/release.yml)
 [![Docker Hub](https://img.shields.io/badge/DockerHub-utils--infra-blue?logo=docker)](https://hub.docker.com/r/rodrigolukojc/utils-infra)
 
