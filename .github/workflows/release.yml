@@ -32,5 +32,5 @@ jobs:
           context: .
           push: true
           tags: |
-            rodrigolukojc/utils-infra:latest
-            rodrigolukojc/utils-infra:${{ steps.vars.outputs.version }}
+            rodrigolukojc/data-utils:latest
+            rodrigolukojc/data-utils:${{ steps.vars.outputs.version }}
