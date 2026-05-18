@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/RodriLukojc/data-utils/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/RodrigoLukojc/data-utils/actions/workflows/ci.yml)
 [![Release](https://github.com/RodriLukojc/data-utils/actions/workflows/release.yml/badge.svg?branch=main)](https://github.com/RodriLukojc/data-utils/actions/workflows/release.yml)
-[![Docker Hub](https://img.shields.io/badge/DockerHub-utils--infra-blue?logo=docker)](https://hub.docker.com/r/rodrigolukojc/data-utils)
+[![Docker Hub](https://img.shields.io/badge/DockerHub-data--utils-blue?logo=docker)](https://hub.docker.com/r/rodrigolukojc/data-utils)
 
 ---
 
